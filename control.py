@@ -32,27 +32,3 @@ class InstrumentController:
 		with open(f'.\image.bmp', 'wb') as target:
 			target.write(instr_data)
 		print("Image was save as BMP.")
-
-
-	
-# Get available resource list for Visa connection
-controller = InstrumentController()
-print(controller.get_resource_list())
-
-# Replace 'GPIB0::14::INSTR' with your instrument's address
-instrument_address = 'GPIB0::14::INSTR'
-# Open connection to instrument
-controller.open_connection(instrument_address)
-
-# Example usage:
-# Query the instrument's identity
-print(controller.query('*IDN?'))
-
-# Write a command to the instrument (replace with an actual command for your instrument)
-controller.write('FREQuency:CENTer?')
-
-# Read the response from the instrument
-print(controller.read())
-
-# Read image screenshot from the instrument
-controller.query_image('HCOPy:SDUMp:DATA?')
