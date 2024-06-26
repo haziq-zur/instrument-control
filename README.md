@@ -19,9 +19,11 @@ A script to initialize connection with instrument using SCPI through VISA connec
 
 ## Examples 
 
-### Get available resource list for Visa connection
+### Initialize controller class
 controller = InstrumentController()
-]print(controller.get_resource_list())
+
+### Get available resource lists
+print(controller.get_resource_list())
 
 ### Replace 'GPIB0::14::INSTR' with your instrument's address
 instrument_address = 'GPIB0::14::INSTR'
